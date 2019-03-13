@@ -1,0 +1,58 @@
+﻿@model CourseApp.Models.Instructor
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="m-4">
+    <div class="bg-primary text-white text-center p-4">
+        Instructor @ViewBag.ActionMode
+    </div>
+    <form asp-action="@(ViewBag.ActionMode)" method="post">
+        <input type="hidden" name="original.Id" value="@Model.Id" />
+        <input type="hidden" name="original.Name" value="@Model.Name" />
+        <input type="hidden" name="original.Contact.Id" value="@Model.Contact.Id" />
+        <input type="hidden" name="original.Contact.Email" value="@Model.Contact.Email" />
+        <input type="hidden" name="original.Contact.Phone" value="@Model.Contact.Phone" />
+
+        <input type="hidden" name="original.Contact.Address.City" value="@Model.Contact.Address.City" />
+        <input type="hidden" name="original.Contact.Address.Country" value="@Model.Contact.Address.Country" />
+        <input type="hidden" name="original.Contact.Address.Id" value="@Model.Contact.Address.Id" />
+        <input type="hidden" name="original.Contact.Address.Text" value="@Model.Contact.Address.Text" />
+
+        <div class="row">
+            <div class="col-12 border">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact.Email"></label>
+                    <input asp-for="Contact.Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact.Phone"></label>
+                    <input asp-for="Contact.Phone" class="form-control" />
+                </div>
+                <input type="hidden" name="Contact.Id" />
+                <input type="hidden" name="Contact.Address.Id" />
+                <div class="form-group">
+                    <label asp-for="Contact.Address.City"></label>
+                    <input asp-for="Contact.Address.City" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact.Address.Country"></label>
+                    <input asp-for="Contact.Address.Country" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Contact.Address.Text"></label>
+                    <input asp-for="Contact.Address.Text" class="form-control" />
+                </div>
+
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+
+
