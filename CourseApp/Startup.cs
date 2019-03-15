@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using CourseApp.Data.Abstract;
+using CourseApp.Data.Concrate;
 using CourseApp.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +40,9 @@ namespace CourseApp
             services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddTransient<IInstructorRepository, EfInstructorRepsitory>();
+
+            services.AddTransient<IGenericRepository<Contact>, GenericRepository<Contact>>();
+            services.AddTransient<IGenericRepository<Address>, GenericRepository<Address>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

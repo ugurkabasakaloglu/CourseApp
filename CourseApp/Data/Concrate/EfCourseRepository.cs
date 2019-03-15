@@ -93,6 +93,11 @@ namespace CourseApp.Models
             originalCourse.IsActive = updateCourse.IsActive;
 
             originalCourse.Instructor.Name = updateCourse.Instructor.Name;
+            originalCourse.Instructor.Contact.Email = updateCourse.Instructor.Contact.Email;
+            originalCourse.Instructor.Contact.Phone = updateCourse.Instructor.Contact.Phone;
+            originalCourse.Instructor.Contact.Address.City = updateCourse.Instructor.Contact.Address.City;
+            originalCourse.Instructor.Contact.Address.Country = updateCourse.Instructor.Contact.Address.Country;
+            originalCourse.Instructor.Contact.Address.Text = updateCourse.Instructor.Contact.Address.Text;
 
             EntityEntry entry = context.Entry(originalCourse);
             //Modified,Unchanged,Added,Deleted,Detached
